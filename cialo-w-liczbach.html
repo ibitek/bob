@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ciało w Liczbach — zaskakujące fakty o ludzkiej anatomii</title>
+<meta name="description" content="Nowoczesna, edukacyjna kolekcja zaskakujących i zabawnych faktów o ludzkim ciele i anatomii." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --background: #fbf9f5;
+    --foreground: #2b2d3a;
+    --card: #ffffff;
+    --muted: #f2efe9;
+    --muted-foreground: #6b6d7a;
+    --primary: #c0344a;
+    --primary-strong: #9e2438;
+    --primary-foreground: #fdf6f2;
+    --accent: #f6e3e0;
+    --accent-foreground: #7a2230;
+    --border: #e7e2d9;
+    --radius: 14px;
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: var(--font-display);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary-strong);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: var(--primary);
+    display: inline-block;
+  }
+
+  /* Header */
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--background) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .brand .mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-foreground);
+  }
+
+  .nav-links a:hover {
+    color: var(--foreground);
+  }
+
+  @media (max-width: 760px) {
+    .nav-links {
+      display: none;
+    }
+  }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 40px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 880px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 5.5vw, 62px);
+    font-weight: 700;
+    margin: 20px 0 20px;
+  }
+
+  .hero h1 .hl {
+    color: var(--primary);
+  }
+
+  .hero p.lead {
+    font-size: 18px;
+    color: var(--muted-foreground);
+    max-width: 46ch;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform .15s ease, background .15s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-strong);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--foreground);
+  }
+
+  .btn-ghost:hover {
+    background: var(--muted);
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    background: radial-gradient(
+      120% 120% at 30% 20%,
+      #ffffff 0%,
+      #f4eee6 60%,
+      #efe6da 100%
+    );
+    border: 1px solid var(--border);
+    aspect-ratio: 4 / 5;
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-visual > img {
+    display: block;
+    width: 74%;
+    height: auto;
+    max-height: 90%;
+    object-fit: contain;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--muted-foreground);
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-badge b {
+    color: var(--foreground);
+    font-family: var(--font-display);
+  }
+
+  /* Stats bar */
+  .stats {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 760px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .stat {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: 760px) {
+    .stat:nth-child(2) {
+      border-right: none;
+    }
+
+    .stat:nth-child(1),
+    .stat:nth-child(2) {
+      border-bottom: 1px solid var(--border);
+    }
+  }
+
+  .stat .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--primary);
+  }
+
+  .stat .lbl {
+    font-size: 13px;
+    color: var(--muted-foreground);
+    margin-top: 4px;
+  }
+
+  /* Section heading */
+  section {
+    padding: 72px 0;
+  }
+
+  .sec-head {
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  .sec-head h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin: 14px 0 12px;
+  }
+
+  .sec-head p {
+    color: var(--muted-foreground);
+    font-size: 17px;
+  }
+
+  /* Filters */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 9px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted-foreground);
+    transition: all .15s ease;
+  }
+
+  .chip:hover {
+    border-color: var(--primary);
+    color: var(--foreground);
+  }
+
+  .chip.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .chip svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Fact cards */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 620px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -24px rgba(43,45,58,.4);
+    border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  }
+
+  .card .cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent-foreground);
+    background: var(--accent);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+
+  .card .cat svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .card p {
+    font-size: 14.5px;
+    color: var(--muted-foreground);
+  }
+
+  .card .stat-line {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .card .stat-line .big {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--primary);
+  }
+
+  .card .stat-line .cap {
+    font-size: 12px;
+    color: var(--muted-foreground);
+  }
+
+  /* Categories */
+  .cat-section {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  @media (max-width: 820px) {
+    .cat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cat-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cat-tile {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    background: var(--background);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .cat-tile .ic {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: var(--accent);
+    color: var(--primary-strong);
+    flex-shrink: 0;
+  }
+
+  .cat-tile .ic svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .cat-tile h3 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .cat-tile p {
+    font-size: 13.5px;
+    color: var(--muted-foreground);
+  }
+
+  /* Bob quote */
+  .bob {
+    padding: 72px 0;
+  }
+
+  .bob-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 40px 40px 36px;
+  }
+
+  @media (max-width: 620px) {
+    .bob-card {
+      padding: 28px 24px;
+    }
+  }
+
+  .bob-quote-mark {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    color: var(--accent);
+  }
+
+  .bob-quote-mark svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .bob .who {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .bob .who .av {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .bob .who .name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .bob .who .role {
+    font-size: 12px;
+    color: var(--muted-foreground);
+  }
+
+  .bob blockquote {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(19px, 2.4vw, 26px);
+    line-height: 1.45;
+    color: var(--foreground);
+    max-width: 52ch;
+  }
+
+  .bob .note {
+    margin-top: 18px;
+    font-size: 13.5px;
+    color: var(--muted-foreground);
+    font-style: italic;
+  }
+
+  /* Featured */
+  .featured {
+    padding: 0 0 72px;
+  }
+
+  .feat-card {
+    background: linear-gradient(135deg, #2b2d3a 0%, #3a2530 100%);
+    color: #f3eee8;
+    border-radius: 22px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (max-width: 780px) {
+    .feat-card {
+      grid-template-columns: 1fr;
+      padding: 32px;
+    }
+  }
+
+  .feat-card .eyebrow {
+    color: #f2b7b0;
+  }
+
+  .feat-card .eyebrow::before {
+    background: #f2b7b0;
+  }
+
+  .feat-card h2 {
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    margin: 14px 0 12px;
+  }
+
+  .feat-card p {
+    color: #cfc7bd;
+    max-width: 48ch;
+  }
+
+  .feat-num {
+    text-align: center;
+  }
+
+  .feat-num .big {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(52px, 8vw, 78px);
+    color: #f2b7b0;
+    line-height: 1;
+  }
+
+  .feat-num .cap {
+    font-size: 13px;
+    color: #cfc7bd;
+    margin-top: 8px;
+  }
+
+  /* Footer */
+  footer.site {
+    border-top: 1px solid var(--border);
+    background: var(--card);
+    padding: 40px 0;
+  }
+
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .foot .brand {
+    font-size: 16px;
+  }
+
+  .foot p {
+    font-size: 13px;
+    color: var(--muted-foreground);
+  }
+</style>
+</head>
+
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </span>
+
+      Ciało w Liczbach
+    </a>
+
+    <nav class="nav-links">
+      <a href="#fakty">Fakty</a>
+      <a href="#kategorie">Kategorie</a>
+      <a href="#bob">Bob mówi</a>
+      <a href="#ciekawostka">Ciekawostka dnia</a>
+    </nav>
+
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="wrap hero-grid">
+
+      <div>
+
+        <span class="eyebrow">
+          Popularnonaukowy atlas ciała
+        </span>
+
+        <h1>
+          Twoje ciało jest
+          <span class="hl">dziwniejsze</span>,
+          niż myślisz
+        </h1>
+
+        <p class="lead">
+          Zbiór zaskakujących, czasem niedorzecznych,
+          a zawsze prawdziwych faktów o ludzkiej anatomii.
+          Poznaj liczby, które kryją się pod skórą.
+        </p>
+
+        <div class="cta-row">
+
+          <a class="btn btn-primary" href="#fakty">
+            Odkryj fakty
+
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+
+          <a class="btn btn-ghost" href="#kategorie">
+            Przeglądaj kategorie
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- HERO IMAGE -->
+      <div class="hero-visual">
+
+        <img src="public/images/anatomy-hero.png" alt="Anatomia" style="display: block; width: 100%; max-width: 600px; height: auto; margin: 20px auto;">
+
+
+        <div class="hero-badge">
+          Ponad <b>12 faktów</b> w 6 kategoriach —
+          od mózgu, przez serce, aż po zaskakujące osobliwości.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+
+    <div class="wrap stats-grid">
+
+      <div class="stat">
+        <div class="num">37,2 bln</div>
+        <div class="lbl">komórek w ciele</div>
+      </div>
+
+      <div class="stat">
+        <div class="num">100 000 km</div>
+        <div class="lbl">długość naczyń krwionośnych</div>
+      </div>
+
+      <div class="stat">
+        <div class="num">206</div>
+        <div class="lbl">kości u dorosłego</div>
+      </div>
+
+      <div class="stat">
+        <div class="num">86 mld</div>
+        <div class="lbl">neuronów w mózgu</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FACTS -->
+  <section id="fakty">
+
+    <div class="wrap">
+
+      <div class="sec-head">
+
+        <span class="eyebrow">
+          Baza faktów
+        </span>
+
+        <h2>
+          Zaskakujące fakty o ciele
+        </h2>
+
+        <p>
+          Filtruj według układu lub narządu i odkrywaj,
+          jak niezwykłą maszyną jest człowiek.
+        </p>
+
+      </div>
+
+      <div class="filters" id="filters"></div>
+
+      <div class="cards" id="cards"></div>
+
+    </div>
+
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="cat-section" id="kategorie">
+
+    <div class="wrap">
+
+      <div class="sec-head">
+
+        <span class="eyebrow">
+          Mapa ciała
+        </span>
+
+        <h2>
+          Sześć obszarów do odkrycia
+        </h2>
+
+        <p>
+          Każdy zakątek organizmu skrywa własne rekordy i osobliwości.
+        </p>
+
+      </div>
+
+      <div class="cat-grid" id="catGrid"></div>
+
+    </div>
+
+  </section>
+
+  <!-- BOB SAYS -->
+  <section class="bob" id="bob">
+
+    <div class="wrap">
+
+      <span
+        class="eyebrow"
+        style="margin-bottom:20px;display:inline-flex;"
+      >
+        Okiem eksperta
+      </span>
+
+      <figure class="bob-card">
+
+        <div class="bob-quote-mark" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M9.6 4.8A6 6 0 0 0 4 10.8V19a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H7.2a3.6 3.6 0 0 1 3.4-3.2 1 1 0 0 0 .9-1V5.8a1 1 0 0 0-1.9-1ZM20.6 4.8A6 6 0 0 0 15 10.8V19a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-3.8a3.6 3.6 0 0 1 3.4-3.2 1 1 0 0 0 .9-1V5.8a1 1 0 0 0-1.9-1Z"/>
+          </svg>
+
+        </div>
+
+        <div class="who">
+
+          <img src="public/images/bobzdrowotny.png" alt="Bob Zdrowotny" style="display: block; width: 20%; max-width: 80px; height: auto; margin: 20px auto;">
+
+
+          <span>
+
+            <span class="name">
+              Bob mówi
+            </span>
+
+            <br />
+
+            <span class="role">
+              o tym, jak „zagotować” treść pokarmową w żołądku
+            </span>
+
+          </span>
+
+        </div>
+
+        <blockquote>
+          „Najpierw musisz się mocno spiąć, żeby poczuć sytość,
+          a przez ten komunikat twój mózg wysyła impuls do trzustki
+          i wątroby, by wysłały więcej enzymów do żołądka —
+          i kwas w żołądku po tym mógłby wyżreć całe ciało.”
+        </blockquote>
+
+        <figcaption class="note">
+          To oczywiście humorystyczna wersja Boba -
+          Na szczęście śluzówka żołądka odnawia się co kilka dni,
+          więc Bob (i my wszyscy) jesteśmy bezpieczni.
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURED -->
+  <section class="featured" id="ciekawostka">
+
+    <div class="wrap">
+
+      <div class="feat-card">
+
+        <div>
+
+          <span class="eyebrow">
+            Ciekawostka dnia
+          </span>
+
+          <h2>
+            Nie połaskoczesz sam siebie
+          </h2>
+
+          <p>
+            Móżdżek przewiduje ruchy twoich własnych rąk
+            i „wycisza” reakcję na dotyk.
+            Dlatego łaskotki działają tylko wtedy,
+            gdy robi je ktoś inny — twój mózg zawsze wie,
+            co planujesz.
+          </p>
+
+        </div>
+
+        <div class="feat-num">
+
+          <div class="big">
+            1
+          </div>
+
+          <div class="cap">
+            winowajca: móżdżek
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site">
+
+  <div class="wrap foot">
+
+    <a class="brand" href="#top">
+
+      <span class="mark" aria-hidden="true">
+
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+
+      </span>
+
+      Ciało w Liczbach
+
+    </a>
+
+    <p>
+      Edukacyjny zbiór faktów o ludzkiej anatomii.
+      Stworzone dla ciekawych świata.
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+  // Inline SVG icons
+  const icons = {
+
+    mozg:
+      '<path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>',
+
+    serce:
+      '<path d="M2 12h3l2-5 3 10 3-7 2 2h5"/>',
+
+    kosci:
+      '<path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>',
+
+    zmysly:
+      '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+
+    wnetrze:
+      '<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05Z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>',
+
+    osobliwosci:
+      '<path d="M9.94 14.06a4 4 0 0 1 0-5.66l4.24 4.24a4 4 0 0 1-4.24 1.42Z"/><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/>'
+
+  };
+
+  const iconSvg = (id, size) =>
+    '<svg viewBox="0 0 24 24" width="' +
+    size +
+    '" height="' +
+    size +
+    '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+    (icons[id] || '') +
+    '</svg>';
+
+  const categories = [
+
+    {
+      id: 'mozg',
+      name: 'Mózg i nerwy',
+      tagline: 'Centrum dowodzenia'
+    },
+
+    {
+      id: 'serce',
+      name: 'Serce i krew',
+      tagline: 'Niestrudzona pompa'
+    },
+
+    {
+      id: 'kosci',
+      name: 'Kości i mięśnie',
+      tagline: 'Rusztowanie ciała'
+    },
+
+    {
+      id: 'zmysly',
+      name: 'Skóra i zmysły',
+      tagline: 'Granica ze światem'
+    },
+
+    {
+      id: 'wnetrze',
+      name: 'Wnętrzności',
+      tagline: 'Fabryka chemiczna'
+    },
+
+    {
+      id: 'osobliwosci',
+      name: 'Osobliwości',
+      tagline: 'Zupełnie nieoczekiwane'
+    }
+
+  ];
+
+  const facts = [
+
+    {
+      categoryId: 'serce',
+      title: 'Twoje serce nie robi sobie przerw',
+      description: 'W ciągu doby serce kurczy się około 100 000 razy, a przez całe życie przepompowuje ilość krwi, która wypełniłaby ponad 40 basenów olimpijskich.',
+      stat: '100 000',
+      statLabel: 'uderzeń na dobę'
+    },
+
+    {
+      categoryId: 'mozg',
+      title: 'Mózg to energetyczny żarłok',
+      description: 'Choć waży zaledwie około 2% masy ciała, mózg zużywa mniej więcej 20% całej energii, jaką produkuje organizm. Myślenie naprawdę kosztuje.',
+      stat: '20%',
+      statLabel: 'energii ciała'
+    },
+
+    {
+      categoryId: 'wnetrze',
+      title: 'Kwas żołądkowy rozpuściłby żyletkę',
+      description: 'Kwas solny w żołądku jest tak silny, że mógłby uszkodzić metal. Przed samostrawieniem chroni nas śluzówka, która odnawia się co kilka dni.',
+      stat: 'pH ~1,5',
+      statLabel: 'kwasowość soku'
+    },
+
+    {
+      categoryId: 'zmysly',
+      title: 'Kichnięcie jest szybsze niż samochód',
+      description: 'Powietrze wyrzucane podczas kichnięcia może pędzić z prędkością nawet 160 km/h, unosząc ze sobą tysiące mikroskopijnych kropelek.',
+      stat: '160 km/h',
+      statLabel: 'prędkość kichnięcia'
+    },
+
+    {
+      categoryId: 'kosci',
+      title: 'Kość udowa jest twardsza niż beton',
+      description: 'Gram za gramem kość udowa wytrzymuje większe obciążenie niż beton czy stal. To najdłuższa i najmocniejsza kość w całym ciele.',
+      stat: '4x',
+      statLabel: 'mocniejsza niż beton'
+    },
+
+    {
+      categoryId: 'wnetrze',
+      title: 'W środku masz kilkumetrowy labirynt',
+      description: 'Samo jelito cienkie ma około 6–7 metrów długości i jest zwinięte w brzuchu. Jego powierzchnia chłonna jest wielkości boiska do tenisa.',
+      stat: '~7 m',
+      statLabel: 'długość jelita cienkiego'
+    },
+
+    {
+      categoryId: 'zmysly',
+      title: 'Ciągle gubisz kawałki siebie',
+      description: 'Skóra to największy narząd ciała. Każdego dnia tracisz setki tysięcy martwych komórek naskórka — spora część kurzu w domu to właśnie ty.',
+      stat: '600 tys.',
+      statLabel: 'komórek dziennie'
+    },
+
+    {
+      categoryId: 'mozg',
+      title: 'Mózg sam nie czuje bólu',
+      description: 'W tkance mózgu nie ma receptorów bólowych. Dlatego operacje neurochirurgiczne można wykonywać, gdy pacjent jest w pełni przytomny.',
+      stat: '0',
+      statLabel: 'receptorów bólu'
+    },
+
+    {
+      categoryId: 'wnetrze',
+      title: 'Płuca kryją ogromną powierzchnię',
+      description: 'Gdyby rozłożyć wszystkie pęcherzyki płucne na płasko, zajęłyby powierzchnię porównywalną z kortem tenisowym — a mieszczą się w klatce piersiowej.',
+      stat: '~70 m²',
+      statLabel: 'powierzchnia wymiany gazów'
+    },
+
+    {
+      categoryId: 'kosci',
+      title: 'Masz tyle kręgów szyi co żyrafa',
+      description: 'Zarówno człowiek, jak i żyrafa mają dokładnie siedem kręgów szyjnych. U żyrafy są po prostu znacznie dłuższe.',
+      stat: '7',
+      statLabel: 'kręgów szyjnych'
+    },
+
+    {
+      categoryId: 'osobliwosci',
+      title: 'Nie połaskoczesz sam siebie',
+      description: 'Móżdżek przewiduje ruchy twoich własnych rąk i „wycisza” reakcję. Dlatego łaskotki działają tylko wtedy, gdy robi je ktoś inny.',
+      stat: '1',
+      statLabel: 'winowajca: móżdżek'
+    },
+
+    {
+      categoryId: 'osobliwosci',
+      title: 'Rano jesteś wyższy niż wieczorem',
+      description: 'W ciągu dnia krążki międzykręgowe lekko się spłaszczają pod wpływem grawitacji. Po przespanej nocy odzyskujesz około centymetra wzrostu.',
+      stat: '~1 cm',
+      statLabel: 'różnicy w ciągu doby'
+    }
+
+  ];
+
+  const catName = id =>
+    (categories.find(c => c.id === id) || {}).name || '';
+
+  // Render filters
+  const filtersEl = document.getElementById('filters');
+
+  const allChips = [
+    {
+      id: 'all',
+      name: 'Wszystkie'
+    }
+  ].concat(categories);
+
+  filtersEl.innerHTML = allChips.map((c, i) =>
+    '<button class="chip' +
+    (i === 0 ? ' active' : '') +
+    '" data-cat="' +
+    c.id +
+    '">' +
+    (c.id !== 'all' ? iconSvg(c.id, 16) : '') +
+    c.name +
+    '</button>'
+  ).join('');
+
+  // Render category tiles
+  document.getElementById('catGrid').innerHTML =
+    categories.map(c =>
+      '<div class="cat-tile">' +
+        '<span class="ic">' +
+          iconSvg(c.id, 22) +
+        '</span>' +
+        '<div>' +
+          '<h3>' +
+            c.name +
+          '</h3>' +
+          '<p>' +
+            c.tagline +
+          '</p>' +
+        '</div>' +
+      '</div>'
+    ).join('');
+
+  // Render cards
+  const cardsEl = document.getElementById('cards');
+
+  function renderCards(cat) {
+
+    const list =
+      cat === 'all'
+        ? facts
+        : facts.filter(f => f.categoryId === cat);
+
+    cardsEl.innerHTML =
+      list.map(f =>
+        '<article class="card">' +
+
+          '<span class="cat">' +
+            iconSvg(f.categoryId, 14) +
+            catName(f.categoryId) +
+          '</span>' +
+
+          '<h3>' +
+            f.title +
+          '</h3>' +
+
+          '<p>' +
+            f.description +
+          '</p>' +
+
+          '<div class="stat-line">' +
+            '<span class="big">' +
+              f.stat +
+            '</span>' +
+            '<span class="cap">' +
+              f.statLabel +
+            '</span>' +
+          '</div>' +
+
+        '</article>'
+      ).join('');
+  }
+
+  renderCards('all');
+
+  filtersEl.addEventListener('click', e => {
+
+    const btn = e.target.closest('.chip');
+
+    if (!btn) return;
+
+    filtersEl
+      .querySelectorAll('.chip')
+      .forEach(c => c.classList.remove('active'));
+
+    btn.classList.add('active');
+
+    renderCards(btn.dataset.cat);
+
+  });
+
+</script>
+
+</body>
+</html>
